@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: cloudopsazurevotingappredis 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudopsazurevotingappredis
+  template:
+    metadata:
+      labels:
+        app: cloudopsazurevotingappredis 
+    spec:
+      containers:
+        - name: cloudopsazurevotingappredis 
+          image: azureaksconatiner.azurecr.io/cloudopsazurevotingappredis
+          ports:
+          - containerPort: 80
